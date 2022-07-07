@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>{% block title %}Welcome!{% endblock %}</title>
+
+		<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+		{# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+
+        <script src="https://kit.fontawesome.com/564e987331.js" crossorigin="anonymous"></script>
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+		<link rel="stylesheet" href="/assets/css/styles.css"> {% block css %}{% endblock %}
+		</head>
+		<body>
+
+			<header></header>
+
+			<main>
+				{% block content %}{% endblock %}
+
+			</main>
+
+			<footer></footer>
+
+
+			{% block javascripts %}
+				<script src="/assets/js/app.js"></script>
+			{% endblock %}
+		</body>
+	</html>

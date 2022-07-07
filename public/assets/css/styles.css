@@ -1,0 +1,134 @@
+body {
+    background: linear-gradient(219deg, rgba(255, 22, 22), rgba(255, 10, 255)307.71%);
+    height: 100vh;
+    margin: 5rem auto;
+    width: 70%;
+    font-family: 'Inter', sans-serif;
+}
+
+
+main {
+    text-align: center;
+}
+
+h1 {
+    color: white;
+    margin-bottom: 4rem;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.33);
+}
+
+.ajouter-tache {
+    width: 43%;
+    margin: 0 auto;
+    display: flex;
+}
+
+input {
+    width: 20rem;
+    border-radius: 5px;
+    background-color: #EDEDED;
+    color: #760AFF;
+    border-radius: none;
+    border: none;
+    padding: 12px;
+    box-shadow: 5px 5px 18px -2px rgba(0, 0, 0, 0.52);
+}
+
+input::placeholder {
+    color: #760AFF;
+    font-size: 16px;
+    /* opacity: 1; */
+}
+
+.btn-add {
+    margin-left: 1rem;
+    width: 8rem;
+    border-radius: 5px;
+    background-color: #EDEDED;
+    color: #760AFF;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 700;
+    box-shadow: 5px 5px 18px -2px rgba(0, 0, 0, 0.52);
+}
+
+.liste-tache {
+    background-color: #EDEDED;
+    margin-top: 2.5rem;
+    width: 41%;
+    /* height:20rem; */
+    margin: 2.5rem auto;
+    border-radius: 10px;
+    border: none;
+    padding: 12px;
+    position: relative;
+    box-shadow: 5px 5px 18px -2px rgba(0, 0, 0, 0.52);
+    padding-bottom: 2rem;
+}
+
+
+
+.btn-delete {
+    color: #760AFF;
+    font-weight: 700;
+    text-decoration: none;
+    position: absolute;
+    bottom: 13px;
+    right: 38px;
+    font-size: 16px;
+    border: none;
+    background: none;
+}
+
+.box-tache {
+    padding: 20px 20px 0 20px;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    color: #760AFF;
+
+}
+
+.poubelle {
+    border: none;
+}
+
+i {
+    font-size: 19px;
+}
+
+.check {
+    /* background-color: black;
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+    margin-left: 15px;
+    margin-right: 15px; */
+    border: none;
+    color: #ff0aff;
+    font-size: 16px;
+    font-weight: 700;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.ligne-separation {
+    width: 26rem;
+    margin: 0 auto;
+    margin-top: 10px;
+    border-bottom: 1px solid #760AFF;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* .error{
+
+} */
+
+.complete {
+    text-decoration: line-through solid 2.5px;
+}

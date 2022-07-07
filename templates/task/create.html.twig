@@ -1,0 +1,65 @@
+{% extends "layout/default.html.twig" %}
+
+{% block title %}Liste des taches
+{% endblock %}
+
+{% block content %}
+	<h1>TO-DO LIST</h1>
+
+	<form
+		class="ajouter-tache" action="/" method="POST">
+		<!-- quand on clique sur le bouton ajouter on renvoie vers l'url / ecrit dans action -->
+		<input type="text" placeholder="Nouvelle tache" name="nom">
+		<button class="btn-add" name="submit">Ajouter</button>
+		<!-- si la variable error existe et is defined c'est cote twig -->
+		{% if error is defined %}
+			<div class="error">{{error}}</div>
+		{% endif %}
+	</form>
+
+{% if mytasks is not empty %} <!-- quand on clique sur le bouton supprimer, condition pour effacer la liste des taches quand elle est vide -->
+	<section class="liste-tache">
+
+		<h2>Liste des taches</h2>
+		<ul>
+			{% for task in mytasks %}
+				<li>
+
+					<div class="box-tache">
+						<form action="tasks/{{task.id}}" method="POST">
+							<button class="poubelle" onclick="return confirm('Voulez-vous supprimer cette tâche ?')">
+								<i class="fa-solid fa-trash-can"></i>
+							</button>
+						</form>
+						<!-- dans controller methode update, ici url avec /edit/ convention quand on fait une mise à jour on ecrit souvent edit -->
+						<form action="/tasks/edit/{{task.id}}" method="POST">
+							<button class="check">
+								{% if task.complete %}
+									<!--si c'est marque complet dans la BD j'écrit faite -->
+									Fait
+								{% else %}
+									Pas fait
+								{% endif %}
+							</button>
+						</form>
+
+						<span {% if task.complete %} class="complete" {% endif %}>{{task.nom}}</span>
+
+					</div>
+					<div class="ligne-separation"></div>
+				</li>
+
+
+			{% endfor %}
+		</ul>
+
+		<form action="/tasks/delete/all" method="POST"> <!-- pas besoin d'id car je veux supprimer toutes le sinformations -->
+			 {% if mytasks is not empty %}<button class="btn-delete">Supprimer</button>{% endif %}
+			 <!--le bouton supprime s'affiche seulement si on a des taches-->
+		</form>
+
+
+	</section>
+	{% endif %}
+
+{% endblock %}
